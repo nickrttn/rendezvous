@@ -11,6 +11,11 @@
         <a href="{{pathFor 'activitiesList'}}" class="navbar-brand">Rendezvous</a>
       </div>
       <div class="collapse navbar-collapse" id="navigation">
+        <ul class="nav navbar-nav">
+          {{#if currentUser}}
+            <li><a href="{{pathFor 'activitySubmit'}}">Create Activity</a></li>
+          {{/if}}
+        </ul>
         <ul class="nav navbar navbar-right">
           {{> loginButtons }}
         </ul>

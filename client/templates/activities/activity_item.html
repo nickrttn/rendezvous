@@ -2,13 +2,19 @@
   <div class="activity">
     <div class="activity-content">
       <h3>{{title}}</h3>
+      <p>
+        {{#if ownPost }}
+          <a href="{{pathFor 'activityEdit'}}">Edit</a>
+        {{/if}}
+      </p>
+      <p><i class="fa fa-calendar"></i> <span>{{date}}</span></p>
       <p><i class="fa fa-clock-o"></i> <span>{{time}}</span></p>
-      <p><i class="fa fa-group"> <span>{{attendees}}/{{maxAttendees}}</span></i></p>
+      <p><i class="fa fa-group"> <span>{{attendees}} / {{maxAttendees}}</span></i></p>
       <a href="#" class="join btn btn-default">Join</a>
       <a href="#" class="more-info-link">More info...</a>
       <div class="more-info">
         <h4>More Info</h4>
-        <p>{{moreInfo}}</p>
+        <p>{{description}}</p>
       </div>
     </div>
   </div>

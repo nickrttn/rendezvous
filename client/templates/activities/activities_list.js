@@ -1,5 +1,5 @@
 Template.activitiesList.helpers({
   activities: function() {
-    return Activities.find();
+    return Activities.find({}, {sort: {submitted: -1 }});
   }
 });
