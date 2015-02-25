@@ -11,6 +11,7 @@ blaze-tools@1.0.2
 boilerplate-generator@1.0.2
 callback-hook@1.0.2
 check@1.0.4
+coffeescript@1.0.5
 ddp@1.0.14
 deps@1.0.6
 ejson@1.0.5
@@ -37,6 +38,7 @@ iron:url@1.0.7
 jquery@1.11.3
 json@1.0.2
 launch-screen@1.0.1
+less@1.0.12
 livedata@1.0.12
 localstorage@1.0.2
 logging@1.0.6
@@ -59,6 +61,7 @@ sacha:spin@2.0.4
 service-configuration@1.0.3
 session@1.0.5
 sha@1.0.2
+softwarerero:accounts-t9n@1.0.6
 spacebars@1.0.5
 spacebars-compiler@1.0.4
 srp@1.0.2
@@ -69,5 +72,7 @@ twbs:bootstrap@3.3.2
 ui@1.0.5
 underscore@1.0.2
 url@1.0.3
+useraccounts:bootstrap@1.8.1
+useraccounts:core@1.8.1
 webapp@1.1.6
 webapp-hashing@1.0.2

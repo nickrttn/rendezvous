@@ -5,7 +5,8 @@ if(Activities.find().count()===0) {
     time: '19:30',
     signedUp: ['userId1', 'userId2', 'userId3'],
     maxAttendees: 6,
-    description: 'We are going out to eat Peking Duck at the best restaurant in town.'
+    description: 'We are going out to eat Peking Duck at the best restaurant in town.',
+    belongsToHostel: '1'
   });
 
   Activities.insert({
@@ -14,7 +15,8 @@ if(Activities.find().count()===0) {
     time: '09:30',
     signedUp: ['userId1', 'userId2', 'userId3', 'userId4', 'userId5'],
     maxAttendees: 12,
-    description: "We are visiting the Chinese wall at a place tourists don't usually visit."
+    description: "We are visiting the Chinese wall at a place tourists don't usually visit.",
+    belongsToHostel: '1'
   });
 
   Activities.insert({
@@ -23,6 +25,7 @@ if(Activities.find().count()===0) {
     time: '11:30',
     signedUp: ['userId1', 'userId2'],
     maxAttendees: 4,
-    description: "We'd love to see the Forbidden City with a small group."
+    description: "We'd love to see the Forbidden City with a small group.",
+    belongsToHostel: '2'
   });
 }

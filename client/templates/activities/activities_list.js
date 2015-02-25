@@ -1,5 +1,6 @@
 Template.activitiesList.helpers({
   activities: function() {
-    return Activities.find({}, {sort: {submitted: -1 }});
+    var session = Session.get('hostelId');
+    return Activities.find({belongsToHostel: session.hostelId}, {sort: {submitted: -1 }}).fetch();
   }
 });

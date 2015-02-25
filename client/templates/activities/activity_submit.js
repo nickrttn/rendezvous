@@ -12,7 +12,7 @@ Template.activitySubmit.events({
     };
 
     var errors = validateActivity(activity);
-    if (errors.title || errors.date || errors.time || errors.description) {
+    if (errors.title || errors.date || errors.time || errors.maxAttendees || errors.description) {
       return Session.set('postSubmitErrors', errors);
     }
 

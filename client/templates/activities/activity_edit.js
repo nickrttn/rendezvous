@@ -1,3 +1,6 @@
+Template.activityEdit.created = function() {
+  Session.set('postEditErrors', {});
+}
 Template.activityEdit.events({
   'submit form': function(e) {
     e.preventDefault();
