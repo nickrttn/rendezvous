@@ -2,10 +2,17 @@ Template.activitySubmit.events({
   'submit form': function(e) {
     e.preventDefault();
 
+    var date = $(e.target).find('[name=date]').val().split('-');
+
+    var time = $(e.target).find('[name=time]').val().split(':');
+
+    var dateTime = new Date(date[0], date[1] - 1, date[2], time[0], time[1]);
+
+    console.log(dateTime);
+
     var activity = {
       title: $(e.target).find('[name=title]').val(),
-      date: $(e.target).find('[name=date]').val(),
-      time: $(e.target).find('[name=time]').val(),
+      dateTime: dateTime,
       maxAttendees: parseInt($(e.target).find('[name=max-attendees]').val()),
       description: $(e.target).find('[name=description]').val(),
       signedUp: [Meteor.userId()],
@@ -13,7 +20,7 @@ Template.activitySubmit.events({
     };
 
     var errors = validateActivity(activity);
-    if (errors.title || errors.date || errors.time || errors.maxAttendees || errors.description) {
+    if (errors.title || errors.dateTime || errors.maxAttendees || errors.description) {
       return Session.set('activitySubmitErrors', errors);
     }
 

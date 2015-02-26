@@ -1,7 +1,8 @@
 Template.activitiesList.helpers({
   activities: function() {
     var session = Session.get('hostelId');
-    return Activities.find({belongsToHostel: session.hostelId}, {sort: {submitted: -1 }}).fetch();
+
+    return Activities.find({belongsToHostel: session.hostelId}, {sort: {dateTime: -1}}).fetch();
   },
   userType: function() {
     var userType = Meteor.user().profile.userType;
@@ -23,7 +24,6 @@ Template.activitiesList.events({
     } else {
       throwError("You already signed up.");
     }
-
   }
 });
 

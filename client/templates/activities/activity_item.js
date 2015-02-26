@@ -13,6 +13,14 @@ Template.activityItem.helpers({
   },
   ownPost: function() {
     return this.userId === Meteor.userId();
+  },
+  date: function() {
+    var date = Activities.findOne(this._id).dateTime.toDateString();
+    return date;
+  },
+  time: function() {
+    var time = Activities.findOne(this._id).dateTime.toTimeString().split(':');
+    return time[0] + ':' + time[1];
   }
 });
 
