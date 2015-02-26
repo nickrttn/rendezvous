@@ -1,8 +1,9 @@
 Template.activitiesList.helpers({
   activities: function() {
     var session = Session.get('hostelId');
+    var date = new Date();
 
-    return Activities.find({belongsToHostel: session.hostelId}, {sort: {dateTime: -1}}).fetch();
+    return Activities.find({belongsToHostel: session.hostelId, dateTime: { $not: { $lt: date }}}, {sort: {dateTime: -1}}).fetch();
   },
   userType: function() {
     var userType = Meteor.user().profile.userType;
