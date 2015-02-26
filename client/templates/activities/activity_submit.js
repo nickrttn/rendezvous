@@ -8,12 +8,13 @@ Template.activitySubmit.events({
       time: $(e.target).find('[name=time]').val(),
       maxAttendees: parseInt($(e.target).find('[name=max-attendees]').val()),
       description: $(e.target).find('[name=description]').val(),
-      signedUp: [Meteor.userId()]
+      signedUp: [Meteor.userId()],
+      belongsToHostel: Session.get('hostelId').hostelId,
     };
 
     var errors = validateActivity(activity);
     if (errors.title || errors.date || errors.time || errors.maxAttendees || errors.description) {
-      return Session.set('postSubmitErrors', errors);
+      return Session.set('activitySubmitErrors', errors);
     }
 
     Meteor.call('activityInsert', activity, function(error, result) {
@@ -26,14 +27,14 @@ Template.activitySubmit.events({
 });
 
 Template.activitySubmit.created = function() {
-  Session.set('postSubmitErrors', {});
+  Session.set('activitySubmitErrors', {});
 };
 
 Template.activitySubmit.helpers({
   errorMessage: function(field) {
-    return Session.get('activitySubmit')[field];
+    return Session.get('activitySubmitErrors')[field];
   },
   errorClass: function(field) {
-    return !!Session.get('postSubmitErrors')[field] ? 'has-error' : '';
+    return !!Session.get('activitySubmitErrors')[field] ? 'has-error' : '';
   }
 });

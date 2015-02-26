@@ -22,6 +22,21 @@ AccountsTemplates.addFields([
   displayName: 'password',
   required: true,
   minLength: 8
+},
+{
+  _id: 'userType',
+  type: 'radio',
+  displayName: 'Are you a backpacker or a hostel owner?',
+  required: true,
+  select: [
+    {
+      text: "Backpacker",
+      value: "backpacker"
+    }, {
+      text: "Hostel",
+      value: "hostel"
+    }]
+
 }]);
 
 var clearSession = function(){
