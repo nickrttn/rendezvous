@@ -22,7 +22,6 @@ TODO
 - fortawesome:fontawesome
 - iron:router
 - sacha:spin
-- ian:accounts-ui-bootstrap-3
 - accounts-password
 - audit-argument-checks
 - useraccounts:bootstrap
