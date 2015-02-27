@@ -9,7 +9,7 @@ Hostelowners can log in to Rendezvous without scanning for the iBeacon and add (
 
 Built with the Meteor.js platform.
 
-Check out an example on: http://37.48.115.174/ and fill in 1 for hostelId.
+Check out an example on: http://37.48.115.174/ and fill in 1 for hostelId after creating an account.
 
 ## Installed packages
 
