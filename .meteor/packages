@@ -16,3 +16,4 @@ audit-argument-checks
 useraccounts:bootstrap
 joshdellay:jquery-mobile-menu
 meteorhacks:kadira
+meteorhacks:kadira-profiler

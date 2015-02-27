@@ -24,6 +24,7 @@ Check out an example on: http://37.48.115.174/ and fill in 1 for hostelId after 
 - audit-argument-checks
 - useraccounts:bootstrap
 - meteorhacks:kadira
+- meteorhacks:kadira-profiler
 
 ## Used Resources
 - [docs.meteor.com](http://docs.meteor.com)
