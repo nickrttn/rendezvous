@@ -25,13 +25,13 @@ Template.activityEdit.events({
     });
   },
 
-  'click .delete': function(e) {
-    e.preventDefault();
+  // 'click .delete': function(e) {
+  //   e.preventDefault();
 
-    if (confirm("Delete this activity?")) {
-      var currentActivityId = this._id;
-      Activities.remove(currentActivityId);
-      Router.go('activitiesList');
-    }
-  }
+  //   if (confirm("Delete this activity?")) {
+  //     var currentActivityId = this._id;
+  //     Activities.remove(currentActivityId);
+  //     Router.go('activitiesList');
+  //   }
+  // }
 });
