@@ -17,13 +17,17 @@ Template.activitiesList.events({
     var user = Meteor.user();
     var activity = Activities.findOne(this._id);
 
-    console.log(userHasSignedUp(user, activity));
-
     if (!userHasSignedUp(user._id, activity)) {
-      console.log('test');
-      Activities.update({_id: this._id}, {$push: {signedUp: user._id}});
-    } else {
-      throwError("You already signed up.");
+      if (activity.maxAttendees > activity.signedUp.length) {
+        Activities.update({_id: this._id}, {$push: {signedUp: user._id}});
+        } else {
+          throwError('The maximum number of attendees has been reached.');
+        }
+    } else if (userHasSignedUp(user._id, activity)) {
+      var signedUp = activity.signedUp.filter(function(id) {
+        return id != user._id;
+      });
+      Activities.update({_id: this._id}, {$set: {signedUp: signedUp}});
     }
   }
 });
