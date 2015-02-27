@@ -5,11 +5,8 @@ Template.activityItem.helpers({
   attending: function() {
     var user = Meteor.user();
     var activity = Activities.findOne(this._id);
-    if (userHasSignedUp(user._id, activity)) {
-      return true;
-    } else {
-      return false;
-    }
+
+    return userHasSignedUp(user, activity) ? true : false;
   },
   ownPost: function() {
     return this.userId === Meteor.userId();
