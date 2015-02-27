@@ -8,8 +8,6 @@ Template.activitySubmit.events({
 
     var dateTime = new Date(date[0], date[1] - 1, date[2], time[0], time[1]);
 
-    console.log(dateTime);
-
     var activity = {
       title: $(e.target).find('[name=title]').val(),
       dateTime: dateTime,
