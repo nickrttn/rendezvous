@@ -3,9 +3,7 @@ Template.activitySubmit.events({
     e.preventDefault();
 
     var date = $(e.target).find('[name=date]').val().split('-');
-
     var time = $(e.target).find('[name=time]').val().split(':');
-
     var dateTime = new Date(date[0], date[1] - 1, date[2], time[0], time[1]);
 
     var activity = {
@@ -14,7 +12,7 @@ Template.activitySubmit.events({
       maxAttendees: parseInt($(e.target).find('[name=max-attendees]').val()),
       description: $(e.target).find('[name=description]').val(),
       signedUp: [Meteor.userId()],
-      belongsToHostel: Session.get('hostelId').hostelId,
+      belongsToHostel: Session.get('hostelId'),
     };
 
     var errors = validateActivity(activity);

@@ -7,6 +7,10 @@ $interaction-color: #49c463;
 $danger-color: #d9534f;
 $danger-hover-color: #c9302c;
 
+html {
+  margin-top: 20px;
+}
+
 body {
   font-family: $body-font-stack;
   text-rendering: optimizeLegibility;
@@ -18,12 +22,21 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-stack;
+  font-weight: 700;
   color: $heading-color;
 }
 
 a {
-  color: $body-color;
+  color: $danger-color;
   text-decoration: underline;
+}
+
+p, img {
+  margin-bottom: 1.5em;
+}
+
+img {
+  @extend .img-responsive;
 }
 
 .more-info {
@@ -55,29 +68,69 @@ a {
   }
 }
 
+.create-link {
+  font-weight: 700;
+}
+
 .activity {
-  padding-bottom: 1em;
-  h3 {
-    margin-bottom: .5em;
-  }
-  table {
-    margin-bottom: 1em;
-    td {
-      padding: 0 0.5em;
-      &:first-child {
-        padding-left: 0;
+  padding: 0.5em;
+  background-color: $body-color;
+  border-radius: 0.5em;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5em;
+  .activity-content {
+    h3 {
+      color: #333;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    h4 {
+      color: #333;
+    }
+    p {
+      color: #333;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      margin-bottom: 1em;
+      padding: 0;
+      li {
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        font-size: 14px;
+        &:after {
+          content: '|';
+          padding: 0 0.25em;
+        }
+        &:last-child:after {
+          content: '';
+        }
+        span {
+          font-size: 12px;
+        }
       }
     }
-  }
-  .btn {
-    margin-right: 1.5em;
+    .more-info {
+      margin-top: 2em;
+      margin-bottom: .5em;
+      p {
+        color: #333;
+        margin: 0;
+      }
+    }
+    .buttons .button .btn {
+      display: block;
+    }
   }
 }
 
 .btn-success {
   background-color: $interaction-color;
   color: $body-color;
-  box-shadow: 2px 2px 0 darken($background-color, 10%);
+  // box-shadow: 2px 2px 0 darken($background-color, 10%);
 }
 
 .btn {
@@ -88,10 +141,22 @@ a {
   padding: 0.75em 1em;
 }
 
-.btn-danger {
-  box-shadow: 2px 2px 0 $danger-hover-color;
-}
-
 .navbar-btn {
   margin-left: .5em;
 }
+
+.nfc-id {
+  margin-top: 1.5em;
+  text-align: center;
+  img {
+    max-width: 60%;
+  }
+}
+
+.at-form {
+  margin-bottom: 0;
+  .at-signup-link {
+    margin-bottom: 0;
+  }
+}
+

@@ -7,11 +7,13 @@ Template.activityEdit.events({
     e.preventDefault();
 
     var currentActivityId = this._id;
+    var date = $(e.target).find('[name=date]').val().split('-');
+    var time = $(e.target).find('[name=time]').val().split(':');
+    var dateTime = new Date(date[0], date[1] - 1, date[2], time[0], time[1]);
 
     var activityProperties = {
       title: $(e.target).find('[name=title]').val(),
-      date: $(e.target).find('[name=date]').val(),
-      time: $(e.target).find('[name=time]').val(),
+      dateTime: dateTime,
       maxAttendees: parseInt($(e.target).find('[name=max-attendees]').val()),
       description: $(e.target).find('[name=description]').val()
     };
@@ -25,13 +27,13 @@ Template.activityEdit.events({
     });
   },
 
-  // 'click .delete': function(e) {
-  //   e.preventDefault();
+  'click .delete': function(e) {
+    e.preventDefault();
 
-  //   if (confirm("Delete this activity?")) {
-  //     var currentActivityId = this._id;
-  //     Activities.remove(currentActivityId);
-  //     Router.go('activitiesList');
-  //   }
-  // }
+    if (confirm("Delete this activity?")) {
+      var currentActivityId = this._id;
+      Activities.remove(currentActivityId);
+      Router.go('activitiesList');
+    }
+  }
 });

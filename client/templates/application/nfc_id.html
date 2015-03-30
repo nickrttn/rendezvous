@@ -1,11 +1,9 @@
 <template name="nfcId">
-  <form class="main form">
-    <div class="form-group">
-      <label for="title" class="control-label">Fill in the ID of your hostel.</label>
-      <div class="controls">
-        <input name="nfc-id" type="text" class="form-control" id="nfc-id" value="" placeholder="Hostel ID">
-      </div>
-    </div>
-    <input type="submit" value="Submit ID" class="btn btn-primary">
-  </form>
+	<div class="col-xs-12 nfc-id">
+    <img src="/images/beacon.png" alt="iBeacon">
+      <p>If you're near a Rendezvous poster, press the button.</p>
+      <form class="main form">
+      <input type="submit" value="Start scanning" class="btn btn-primary">
+      </form>
+  </div>
 </template>

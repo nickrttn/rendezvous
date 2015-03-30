@@ -1,40 +1,42 @@
 <template name="activitySubmit">
-  <form class="main form">
-    <div class="form-group {{errorClass 'title'}}">
-      <label for="title" class="control-label">What would you like to do?</label>
-      <div class="controls">
-        <input name="title" type="text" class="form-control" id="title" value="" placeholder="Your activity">
-        <span class="help-block">{{errorMessage 'title'}}</span>
+  <div class="col-sm-12">
+    <form class="main form">
+      <div class="form-group {{errorClass 'title'}}">
+        <label for="title" class="control-label">What would you like to do?</label>
+        <div class="controls">
+          <input name="title" type="text" class="form-control" id="title" value="" placeholder="Your activity">
+          <span class="help-block">{{errorMessage 'title'}}</span>
+        </div>
       </div>
-    </div>
-    <div class="form-group {{errorClass 'date'}}">
-      <label for="date" class="control-label">Date</label>
-      <div class="controls">
-        <input type="date" name="date" id="date" value="" class="form-control">
-        <span class="help-block">{{errorMessage 'date'}}</span>
+      <div class="form-group {{errorClass 'date'}}">
+        <label for="date" class="control-label">Date</label>
+        <div class="controls">
+          <input type="date" name="date" id="date" value="" class="form-control">
+          <span class="help-block">{{errorMessage 'date'}}</span>
+        </div>
       </div>
-    </div>
-    <div class="form-group {{errorClass 'time'}}">
-      <label for="time" class="control-label">Time</label>
-      <div class="controls">
-        <input type="time" name="time" id="time" value="" class="form-control">
-        <span class="help-block">{{errorMessage 'time'}}</span>
+      <div class="form-group {{errorClass 'time'}}">
+        <label for="time" class="control-label">Time</label>
+        <div class="controls">
+          <input type="time" name="time" id="time" value="" class="form-control">
+          <span class="help-block">{{errorMessage 'time'}}</span>
+        </div>
       </div>
-    </div>
-    <div class="form-group {{errorClass 'maxAttendees'}}">
-      <label for="max-attendees">Maximum number of attendees</label>
-      <div class="controls">
-        <input type="number" name="max-attendees" id="max-attendees" value="" placeholder="1" min="1" class="form-control">
-        <span class="help-block">{{errorMessage 'maxAttendees'}}</span>
+      <div class="form-group {{errorClass 'maxAttendees'}}">
+        <label for="max-attendees">Maximum number of attendees</label>
+        <div class="controls">
+          <input type="number" name="max-attendees" id="max-attendees" value="" placeholder="1" min="1" class="form-control">
+          <span class="help-block">{{errorMessage 'maxAttendees'}}</span>
+        </div>
       </div>
-    </div>
-    <div class="form-group {{errorClass 'description'}}">
-      <label for="description" class="control-label">More Information</label>
-      <div class="controls">
-        <textarea name="description" id="description" rows="3" value="" placeholder="Tell us more about your activity." class="form-control"></textarea>
-        <span class="help-block">{{errorMessage 'description'}}</span>
+      <div class="form-group {{errorClass 'description'}}">
+        <label for="description" class="control-label">More Information</label>
+        <div class="controls">
+          <textarea name="description" id="description" rows="3" value="" placeholder="Tell us more about your activity." class="form-control"></textarea>
+          <span class="help-block">{{errorMessage 'description'}}</span>
+        </div>
       </div>
-    </div>
-    <input type="submit" value="Create Activity" class="btn btn-primary">
-  </form>
+      <input type="submit" value="Create Activity" class="btn btn-primary">
+    </form>
+  </div>
 </template>

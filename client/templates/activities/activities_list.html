@@ -1,8 +1,9 @@
 <template name="activitiesList">
   <div class="activities">
+    <h3>Activities</h3>
     {{#each activities}}
       {{> activityItem}}
     {{/each}}
-    <a href="{{pathFor 'activitySubmit'}}">Create Activity</a>
+    <a href="{{pathFor 'activitySubmit'}}" class="create-link">Create Activity</a>
   </div>
 </template>

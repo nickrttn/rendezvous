@@ -1,30 +1,35 @@
 <template name="activityItem">
-  <div class="activity">
+  <div class="col-xs-12 activity">
     <div class="activity-content">
       <h3>{{title}}</h3>
 
-      <p>
-        {{#if ownPost }}
-          <a href="{{pathFor 'activityEdit'}}">Edit</a>
-        {{/if}}
-      </p>
+      <ul>
+        <li><i class="fa fa-calendar"></i> <span>{{date}}</span></li>
+        <li><i class="fa fa-clock-o"></i> <span>{{time}}</span></li>
+        <li><i class="fa fa-group"></i> <span>{{attendees}} / {{maxAttendees}}</span></li>
+      </ul>
 
-      <p><i class="fa fa-calendar"></i> <span>{{date}}</span></p>
-      <p><i class="fa fa-clock-o"></i> <span>{{time}}</span></p>
-      <p><i class="fa fa-group"></i> <span>{{attendees}} / {{maxAttendees}}</span></p>
+      <h4>Event information</h4>
+      <p>{{description}}</p>
 
-      <p><a href="#" class="more-info-link">More info...</a></p>
-
-      {{#if attending}}
-        <a href="#" class="join btn btn-danger">Leave</a>
-      {{else}}
-        <a href="#" class="join btn btn-default">Join</a>
-      {{/if}}
-
-      <div class="more-info">
-        <h4>More Info</h4>
-        <p>{{description}}</p>
+      <div class="row buttons">
+        <div class="col-xs-6 button">
+          {{#if ownPost }}
+            <a href="{{pathFor 'activityEdit'}}" class="btn btn-danger">Edit</a>
+          {{/if}}
+        </div>
+        <div class="col-xs-6 button">
+          <div class="join-button">
+            {{#if attending}}
+              <a href="#" class="join btn btn-primary">Leave</a>
+            {{else}}
+              <a href="#" class="join btn btn-success">Join</a>
+            {{/if}}
+          </div>
+        </div>
       </div>
+
+      
     </div>
   </div>
 </template>

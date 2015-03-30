@@ -33,10 +33,9 @@ AccountsTemplates.addFields([
       text: "Backpacker",
       value: "backpacker"
     }, {
-      text: "Hostel",
+      text: "Hostel Owner",
       value: "hostel"
     }]
-
 }]);
 
 var clearSession = function(){
@@ -44,5 +43,10 @@ var clearSession = function(){
 };
 
 AccountsTemplates.configure({
-  onLogoutHook: clearSession
+  onLogoutHook: clearSession,
+  texts: {
+    title: {
+      signIn: 'Welcome'
+    }
+  }
 });

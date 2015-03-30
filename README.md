@@ -40,3 +40,4 @@ Check out an example on: http://37.48.115.174/ and fill in 1 for hostelId after 
 - [useraccounts.meteor.com](https://github.com/meteor-useraccounts/core/blob/master/Guide.md)
 - [Markdown Basics](http://daringfireball.net/projects/markdown/basics)
 - [fontawesome.io](http://fontawesome.io)
+- [Evothings Phonegap Estimote SDK](https://github.com/evothings/phonegap-estimotebeacons/blob/master/documentation.md)

@@ -3,7 +3,12 @@
       <nav id="nav">
         <ul>
           {{#if currentUser}}
+            <li><a href="{{pathFor 'activitiesList'}}">Activities</a></li>
             <li><a href="{{pathFor 'activitySubmit'}}">Create Activity</a></li>
+            <li></li>
+            <!-- <li><a href="{{pathFor 'profile'}}">Profile</a></li> -->
+            <!-- <li></li> -->
+            <!-- <li><a class="moved" href="#">Moved to another hostel?</a></li> -->
           {{/if}}
             <li>{{> atNavButton }}</li>
         </ul>
